@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduGenie - AI Learning Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                E
+            </div>
+
+            <div>
+                <div class="brand-small">
+                    LEARNING ASSISTANT
+                </div>
+
+                <div class="brand-name">
+                    EduGenie
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="page-container">
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-label">
+                WELCOME TO EDUGENIE
+            </div>
+
+            <h1>
+                Your AI-powered study companion
+            </h1>
+
+            <p>
+                Ask questions, understand difficult concepts,
+                summarize text, generate quizzes, and create
+                personalized learning paths with AI.
+            </p>
+
+        </section>
+
+
+        <!-- ================= TOOL CARD ================= -->
+
+        <section class="tool-card">
+
+            <div class="tool-heading">
+
+                <div class="tool-icon">
+                    AI
+                </div>
+
+                <div>
+
+                    <h2>
+                        Choose a Learning Tool
+                    </h2>
+
+                    <p>
+                        Select what you want EduGenie to help you with.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MODULE SELECT -->
+
+            <div class="form-group">
+
+                <label for="module-select">
+                    Select Module
+                </label>
+
+                <select id="module-select">
+
+                    <option value="">
+                        -- Select a Module --
+                    </option>
+
+                    <option value="qa">
+                        Q&amp;A - Ask a Question
+                    </option>
+
+                    <option value="explain">
+                        Explain - Simplify a Topic
+                    </option>
+
+                    <option value="quiz">
+                        Quiz - Generate MCQ Quiz
+                    </option>
+
+                    <option value="summarize">
+                        Summary - Summarize Text
+                    </option>
+
+                    <option value="learning">
+                        Recommend Path - Learning Roadmap
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================= Q&A ================= -->
+
+            <div
+                id="qa-section"
+                class="input-section"
+                style="display: none;"
+            >
+
+                <label for="qa-input">
+                    Enter your question
+                </label>
+
+                <textarea
+                    id="qa-input"
+                    rows="6"
+                    placeholder="Example: What is Java?"
+                ></textarea>
+
+            </div>
+
+
+            <!-- ================= EXPLAIN ================= -->
+
+            <div
+                id="explain-section"
+                class="input-section"
+                style="display: none;"
+            >
+
+                <label for="explain-input">
+                    Enter a topic
+                </label>
+
+                <textarea
+                    id="explain-input"
+                    rows="6"
+                    placeholder="Example: Explain Object Oriented Programming"
+                ></textarea>
+
+            </div>
+
+
+            <!-- ================= QUIZ ================= -->
+
+            <div
+                id="quiz-section"
+                class="input-section"
+                style="display: none;"
+            >
+
+                <label for="quiz-input">
+                    Enter a topic for the quiz
+                </label>
+
+                <textarea
+                    id="quiz-input"
+                    rows="6"
+                    placeholder="Example: Java Arrays"
+                ></textarea>
+
+            </div>
+
+
+            <!-- ================= SUMMARY ================= -->
+
+            <div
+                id="summary-section"
+                class="input-section"
+                style="display: none;"
+            >
+
+                <label for="summary-input">
+                    Enter the text to summarize
+                </label>
+
+                <textarea
+                    id="summary-input"
+                    rows="8"
+                    placeholder="Paste the text you want EduGenie to summarize..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- ================= LEARNING PATH ================= -->
+
+            <div
+                id="learning-section"
+                class="input-section"
+                style="display: none;"
+            >
+
+                <label for="learning-input">
+                    Enter the topic you want to learn
+                </label>
+
+                <textarea
+                    id="learning-input"
+                    rows="6"
+                    placeholder="Example: SQL"
+                ></textarea>
+
+
+                <label for="learning-level">
+                    Select your level
+                </label>
+
+                <select id="learning-level">
+
+                    <option value="beginner">
+                        Beginner
+                    </option>
+
+                    <option value="intermediate">
+                        Intermediate
+                    </option>
+
+                    <option value="advanced">
+                        Advanced
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================= GENERATE ================= -->
+
+            <button
+                id="generate-button"
+                type="button"
+                disabled
+            >
+                Generate
+            </button>
+
+        </section>
+
+
+        <!-- ================= RESPONSE ================= -->
+
+        <section class="response-card">
+
+            <div class="response-header">
+
+                <h2>
+                    EduGenie Response
+                </h2>
+
+                <span
+                    id="status-badge"
+                    class="status-badge"
+                >
+                    Idle
+                </span>
+
+            </div>
+
+
+            <div
+                id="response-output"
+                class="response-output"
+            >
+
+                <p class="placeholder-text">
+                    Select a module and submit a request to see the result here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="{{ url_for('static', path='app.js') }}?v=2"></script>
+
+</body>
+
+</html>
